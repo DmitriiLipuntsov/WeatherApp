@@ -14,10 +14,6 @@ struct WeatherApp: App {
     var body: some Scene {
         WindowGroup {
             TabBarView()
-                .environment(\.managedObjectContext, viewModel.persistenceController.container.viewContext)
-                .onAppear {
-                    
-                }
         }
     }
 }

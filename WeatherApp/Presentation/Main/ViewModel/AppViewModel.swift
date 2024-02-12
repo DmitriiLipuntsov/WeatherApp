@@ -9,7 +9,6 @@ import Foundation
 
 class AppViewModel: ObservableObject {
     
-    let persistenceController = PersistenceController.shared
     private let locationManager = LocationManager()
     
     init() {
