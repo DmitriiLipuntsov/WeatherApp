@@ -2,6 +2,9 @@
 
 WeatherApp is a mobile application that provides weather forecasts for different locations. It fetches weather data from the OpenWeatherMap API and displays it to the user.
 
+## Screenshots
+<img src="https://github.com/DmitriiLipuntsov/WeatherApp/blob/main/screen.png" width="200" height="400"/> <img src="https://github.com/DmitriiLipuntsov/WeatherApp/blob/main/screen0.png" width="200" height="400"/>
+
 ## Features
 
 - Display current weather for the user's location.
@@ -22,8 +25,3 @@ WeatherApp is a mobile application that provides weather forecasts for different
 - URLSession for network requests
 - OpenWeatherMap API for weather data
 - Core Data for local data storage (Work in progress)
-
-## Screenshots
-
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
