@@ -25,3 +25,9 @@ WeatherApp is a mobile application that provides weather forecasts for different
 - URLSession for network requests
 - OpenWeatherMap API for weather data
 - User Default for local data storage
+
+## Additional Notes
+
+Development Time: Approximately 10 hours.
+Design: The project focused more on functionality rather than design aesthetics. Further improvements in design and layout adaptation for different screen sizes are needed.
+Data Management: More detailed work is required on data storage, testing, performance optimization, and memory leaks.
