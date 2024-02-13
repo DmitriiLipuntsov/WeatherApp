@@ -7,20 +7,20 @@
 
 import Foundation
 
-struct CurrentWeather: Decodable {
+struct CurrentWeather: Codable {
     let weather: [Weather]
     let main: Main
     let name: String
 }
 
 extension CurrentWeather {
-    struct Weather: Decodable {
+    struct Weather: Codable {
         let icon: String
     }
 }
 
 extension CurrentWeather {
-    struct Main: Decodable {
+    struct Main: Codable {
         let temp: Double
     }
 }

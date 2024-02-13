@@ -12,12 +12,10 @@
 		C025FDF72B7AAA7B004AC122 /* ForecastBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025FDF62B7AAA7B004AC122 /* ForecastBodyView.swift */; };
 		C025FDF92B7AAB1B004AC122 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025FDF82B7AAB1B004AC122 /* ForecastCell.swift */; };
 		C025FDFB2B7ABB7B004AC122 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C025FDFA2B7ABB7B004AC122 /* .gitignore */; };
-		C025FDFD2B7ABC1D004AC122 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025FDFC2B7ABC1D004AC122 /* CoreDataService.swift */; };
-		C025FE002B7ABC5D004AC122 /* EntityFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C025FDFF2B7ABC5D004AC122 /* EntityFetchable.swift */; };
+		C06BB73B2B7B54E5005465FD /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06BB73A2B7B54E5005465FD /* UserDefaultsService.swift */; };
 		C0A195032B7A124800FC036B /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A195022B7A124800FC036B /* WeatherApp.swift */; };
 		C0A195072B7A124A00FC036B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A195062B7A124A00FC036B /* Assets.xcassets */; };
 		C0A1950A2B7A124A00FC036B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A195092B7A124A00FC036B /* Preview Assets.xcassets */; };
-		C0A1950F2B7A124A00FC036B /* WeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C0A1950D2B7A124A00FC036B /* WeatherApp.xcdatamodeld */; };
 		C0A195252B7A146E00FC036B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A195242B7A146E00FC036B /* TabBarView.swift */; };
 		C0A195272B7A14A100FC036B /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A195262B7A14A100FC036B /* ForecastView.swift */; };
 		C0A195292B7A152D00FC036B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A195282B7A152D00FC036B /* HomeView.swift */; };
@@ -45,13 +43,11 @@
 		C025FDF62B7AAA7B004AC122 /* ForecastBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastBodyView.swift; sourceTree = "<group>"; };
 		C025FDF82B7AAB1B004AC122 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
 		C025FDFA2B7ABB7B004AC122 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		C025FDFC2B7ABC1D004AC122 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
-		C025FDFF2B7ABC5D004AC122 /* EntityFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityFetchable.swift; sourceTree = "<group>"; };
+		C06BB73A2B7B54E5005465FD /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 		C0A194FF2B7A124800FC036B /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A195022B7A124800FC036B /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
 		C0A195062B7A124A00FC036B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0A195092B7A124A00FC036B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C0A1950E2B7A124A00FC036B /* WeatherApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherApp.xcdatamodel; sourceTree = "<group>"; };
 		C0A195242B7A146E00FC036B /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		C0A195262B7A14A100FC036B /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		C0A195282B7A152D00FC036B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -85,12 +81,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C025FDFE2B7ABC40004AC122 /* Entity */ = {
+		C06BB7392B7B52BD005465FD /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
-				C025FDFF2B7ABC5D004AC122 /* EntityFetchable.swift */,
+				C06BB73A2B7B54E5005465FD /* UserDefaultsService.swift */,
 			);
-			path = Entity;
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		C0A194F62B7A124800FC036B = {
@@ -120,7 +116,6 @@
 				C0A195222B7A13D500FC036B /* Domain */,
 				C0A195152B7A127300FC036B /* Presentation */,
 				C0A195062B7A124A00FC036B /* Assets.xcassets */,
-				C0A1950D2B7A124A00FC036B /* WeatherApp.xcdatamodeld */,
 				C0A195082B7A124A00FC036B /* Preview Content */,
 			);
 			path = WeatherApp;
@@ -261,8 +256,8 @@
 		C0A195232B7A13DD00FC036B /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C06BB7392B7B52BD005465FD /* UserDefaults */,
 				C0A1953E2B7A30D000FC036B /* Network */,
-				C0A1953F2B7A30E300FC036B /* CoreData */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -331,15 +326,6 @@
 				C0A195502B7A535A00FC036B /* OpenweathermapApi */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		C0A1953F2B7A30E300FC036B /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				C025FDFC2B7ABC1D004AC122 /* CoreDataService.swift */,
-				C025FDFE2B7ABC40004AC122 /* Entity */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		C0A195442B7A519600FC036B /* Helper */ = {
@@ -463,9 +449,8 @@
 				C0A195412B7A310D00FC036B /* NetworkManager.swift in Sources */,
 				C025FDF52B7AA99A004AC122 /* ForecastModel.swift in Sources */,
 				C0A1953B2B7A260600FC036B /* AppViewModel.swift in Sources */,
-				C0A1950F2B7A124A00FC036B /* WeatherApp.xcdatamodeld in Sources */,
-				C025FE002B7ABC5D004AC122 /* EntityFetchable.swift in Sources */,
 				C0A195432B7A316800FC036B /* OpenweathermapApiEndpoint.swift in Sources */,
+				C06BB73B2B7B54E5005465FD /* UserDefaultsService.swift in Sources */,
 				C0A195292B7A152D00FC036B /* HomeView.swift in Sources */,
 				C0A1954F2B7A535500FC036B /* OpenweathermapApiManager.swift in Sources */,
 				C0A195532B7A58AC00FC036B /* CurrentWeather.swift in Sources */,
@@ -474,7 +459,6 @@
 				C0A195252B7A146E00FC036B /* TabBarView.swift in Sources */,
 				C025FDF72B7AAA7B004AC122 /* ForecastBodyView.swift in Sources */,
 				C0A195032B7A124800FC036B /* WeatherApp.swift in Sources */,
-				C025FDFD2B7ABC1D004AC122 /* CoreDataService.swift in Sources */,
 				C0A195272B7A14A100FC036B /* ForecastView.swift in Sources */,
 				C0A195572B7A7A5A00FC036B /* Forecast.swift in Sources */,
 				C0A195592B7A7D5100FC036B /* HomeViewModel.swift in Sources */,
@@ -625,7 +609,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To determine your current location with an upper limit.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "To determine your current location with an upper limit.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "To determine your current location with an upper limit.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To determine your current location with an upper limit.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -665,7 +648,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To determine your current location with an upper limit.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "To determine your current location with an upper limit.";
 				INFOPLIST_KEY_NSLocationUsageDescription = "To determine your current location with an upper limit.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To determine your current location with an upper limit.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -712,19 +694,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C0A1950D2B7A124A00FC036B /* WeatherApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C0A1950E2B7A124A00FC036B /* WeatherApp.xcdatamodel */,
-			);
-			currentVersion = C0A1950E2B7A124A00FC036B /* WeatherApp.xcdatamodel */;
-			path = WeatherApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C0A194F72B7A124800FC036B /* Project object */;
 }

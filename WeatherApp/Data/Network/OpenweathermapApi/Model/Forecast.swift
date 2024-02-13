@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Forecast: Decodable {
+struct Forecast: Codable {
     let list: [Weather]
     let city: City?
 }
 
 extension Forecast {
-    struct Weather: Decodable {
+    struct Weather: Codable {
         let dt: String?
         let main: Parameters?
         let weather: [Icon]?
@@ -27,13 +27,13 @@ extension Forecast {
 }
 
 extension Forecast {
-    struct Parameters: Decodable {
+    struct Parameters: Codable {
         let temp: Double?
     }
 }
 
 extension Forecast {
-    struct Icon: Decodable {
+    struct Icon: Codable {
         let main: String?
         let description: String?
         let icon: String?
@@ -41,7 +41,7 @@ extension Forecast {
 }
 
 extension Forecast {
-    struct City: Decodable {
+    struct City: Codable {
         let name: String?
     }
 }

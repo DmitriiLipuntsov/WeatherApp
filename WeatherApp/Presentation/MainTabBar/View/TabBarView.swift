@@ -16,16 +16,16 @@ struct TabBarView: View {
         TabView(selection: $selectedTab) {
             ForEach(TabItem.allCases, id: \.self) { tabItem in
                 switch tabItem {
-                case .home:
-                    HomeView()
-                        .tabItem {
-                            EmptyView()
-                        }
                 case .forecast:
                     ForecastView()
                         .tabItem {
                             Image(systemName: tabItem.imageName)
                             Text(tabItem.name)
+                        }
+                case .home:
+                    HomeView()
+                        .tabItem {
+                            EmptyView()
                         }
                 case .empty:
                     Text("")

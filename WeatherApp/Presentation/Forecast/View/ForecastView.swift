@@ -11,23 +11,22 @@ struct ForecastView: View {
     @StateObject var viewModel = ForecastViewModel()
     
     var body: some View {
-        if !viewModel.forecast.isEmpty {
-            ForecastBodyView(
-                model: $viewModel.forecast, 
-                selectedModel: $viewModel.selectedCell
-            )
-        } else if viewModel.locationAccessDenied {
-            Text("Access to location is denied. Please go to settings to enable it.")
-                .frame(width: .screenWidth / 2)
-            Button("Open Settings") {
-                guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
-                if UIApplication.shared.canOpenURL(settingsURL) {
-                    UIApplication.shared.open(settingsURL)
+        ZStack {
+            if !viewModel.forecast.isEmpty {
+                ForecastBodyView(model: $viewModel.forecast)
+            } else if viewModel.locationAccessDenied {
+                Text("Access to location is denied. Please go to settings to enable it.")
+                    .frame(width: .screenWidth / 2)
+                Button("Open Settings") {
+                    guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
+                    if UIApplication.shared.canOpenURL(settingsURL) {
+                        UIApplication.shared.open(settingsURL)
+                    }
                 }
+                .padding(.top, 20)
+            } else {
+                ProgressView()
             }
-            .padding(.top, 20)
-        } else {
-            ProgressView()
         }
     }
 }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CellForecastView: View {
     var model: ForecastModel
-    let isDrawBordersOfCell: Bool
     
     var body: some View {
         ZStack{
@@ -31,13 +30,6 @@ struct CellForecastView: View {
                 Text(String(model.temp))
                     .padding(40)
                     .scaleEffect(2.5)
-                    .foregroundColor(Color.blue)
-            }
-            
-            if isDrawBordersOfCell {
-                Rectangle()
-                    .stroke(lineWidth: 2)
-                    .frame( idealWidth: .infinity, maxHeight: 85)
                     .foregroundColor(Color.blue)
             }
         }

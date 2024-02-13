@@ -25,7 +25,7 @@ class LocationManager: NSObject, ObservableObject {
     }
 }
 
-extension LocationManager : CLLocationManagerDelegate {
+extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         authorizationStatus = status
         switch status {

@@ -7,23 +7,15 @@
 
 import SwiftUI
 
-struct   ForecastBodyView : View {
+struct ForecastBodyView : View {
     
     @Binding var model: [ForecastModel]
-    @Binding var selectedModel: ForecastModel?
     
     var body: some View {
-        VStack( spacing: 20){
-            Image("MulticolorStripe")
-                .resizable()
-                .frame(height: 50)
+        VStack(spacing: 20){
             if !model.isEmpty {
                 List(model, id: \.id) { item in
-                    let isSelected = item.id == selectedModel?.id
-                    CellForecastView(
-                        model: item,
-                        isDrawBordersOfCell: isSelected
-                    )
+                    CellForecastView(model: item)
                 }
             } else {
                 Text("Empty")

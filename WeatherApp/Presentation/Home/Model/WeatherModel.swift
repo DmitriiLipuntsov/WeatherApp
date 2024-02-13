@@ -8,6 +8,7 @@
 import Foundation
 
 struct WeatherModel {
+    let id: UUID
     let cityName: String
     let temperature: Int
     let comment: String

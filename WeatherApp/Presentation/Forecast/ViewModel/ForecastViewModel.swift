@@ -10,7 +10,6 @@ import Combine
 
 final class ForecastViewModel: ObservableObject {
     @Published var forecast: [ForecastModel] = []
-    @Published var selectedCell: ForecastModel?
     @Published var locationAccessDenied = false
     
     let repository = WeatherRepository()
@@ -54,5 +53,4 @@ extension ForecastViewModel {
             }
             .store(in: &cancellables)
     }
-
 }

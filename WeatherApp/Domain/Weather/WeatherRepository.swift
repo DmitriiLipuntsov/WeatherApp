@@ -24,6 +24,7 @@ class WeatherRepository {
     
     init() {
         subscribe()
+        fetchSavedData()
         fetchWeather()
         fetchForecast()
     }
@@ -46,6 +47,7 @@ class WeatherRepository {
             }
         } receiveValue: { [weak self] weather in
             self?.weatherModel = self?.transformWeatherToWeatherModel(weather)
+            self?.saveWeather(weather)
         }
         .store(in: &cancellables)
     }
@@ -69,6 +71,7 @@ class WeatherRepository {
         } receiveValue: { [weak self] forecast in
             guard let self = self else { return }
             self.forecastModel = self.transformForecastToForecastModel(forecast)
+            self.saveForecast(forecast)
         }
         .store(in: &cancellables)
     }
@@ -95,6 +98,7 @@ private extension WeatherRepository {
         }
         
         return WeatherModel(
+            id: UUID(),
             cityName: weather.name,
             temperature: Int(weather.main.temp),
             comment: comment,
@@ -115,6 +119,93 @@ private extension WeatherRepository {
             )
         }
     }
+}
+
+//MARK: - Saved data
+private extension WeatherRepository {
+    func fetchSavedData() {
+        if let weather = fetchSavedWeatherData() {
+            weatherModel = transformWeatherToWeatherModel(weather)
+        }
+        
+        if let forecast = fetchSavedForecastData() {
+            self.forecastModel = transformForecastToForecastModel(forecast)
+        }
+    }
+    
+    func fetchSavedWeatherData() -> CurrentWeather? {
+        guard let savedData = UserDefaultsService.currentWeather else {
+            return nil
+        }
+        
+        do {
+            let weatherModel = try JSONDecoder().decode(CurrentWeather.self, from: savedData)
+            return weatherModel
+        } catch {
+            let message = error.localizedDescription
+            let destination = "Destination: \n File: \(#file) - Func: \(#function) - Line: \(#line)\n"
+            LoggerManager.shared.log(
+                subsystem: .data,
+                level: .error,
+                destination: destination,
+                message: message
+            )
+            return nil
+        }
+    }
+    
+    func fetchSavedForecastData() -> Forecast? {
+        guard let savedData = UserDefaultsService.forecast else {
+            return nil
+        }
+        
+        do {
+            let forecast = try JSONDecoder().decode(Forecast.self, from: savedData)
+            return forecast
+        } catch {
+            let message = error.localizedDescription
+            let destination = "Destination: \n File: \(#file) - Func: \(#function) - Line: \(#line)\n"
+            LoggerManager.shared.log(
+                subsystem: .data,
+                level: .error,
+                destination: destination,
+                message: message
+            )
+            return nil
+        }
+    }
+    
+    func saveWeather(_ model: CurrentWeather) {
+            do {
+                let jsonData = try JSONEncoder().encode(model)
+                UserDefaultsService.currentWeather = jsonData
+            } catch {
+                let message = error.localizedDescription
+                let destination = "Destination: \n File: \(#file) - Func: \(#function) - Line: \(#line)\n"
+                LoggerManager.shared.log(
+                    subsystem: .data,
+                    level: .error,
+                    destination: destination,
+                    message: message
+                )
+            }
+        }
+        
+        func saveForecast(_ forecast: Forecast) {
+            do {
+                let jsonData = try JSONEncoder().encode(forecast)
+                UserDefaultsService.forecast = jsonData
+            } catch {
+                let message = error.localizedDescription
+                let destination = "Destination: \n File: \(#file) - Func: \(#function) - Line: \(#line)\n"
+                LoggerManager.shared.log(
+                    subsystem: .data,
+                    level: .error,
+                    destination: destination,
+                    message: message
+                )
+            }
+        }
 }
 
 //MARK: - Subscribtions
