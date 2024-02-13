@@ -51,6 +51,7 @@ struct TabBarView: View {
             .clipShape(Circle())
             .shadow(radius: 5, y: 10)
             .padding(.bottom, -5)
+            .ignoresSafeArea(.keyboard)
             
             , alignment: .bottom
         )
@@ -61,6 +62,7 @@ struct TabBarView: View {
                 exSelectedTab = selectedTab
             }
         }
+        .ignoresSafeArea(.keyboard)
     }
 }
 

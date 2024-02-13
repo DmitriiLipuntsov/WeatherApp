@@ -76,6 +76,28 @@ class WeatherRepository {
         .store(in: &cancellables)
     }
     
+    func fetchCityWeather(cityName: String) {
+        openweathermapApiManager.fetchCityWeather(cityName: cityName).sink { completion in
+            switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                let message = error.localizedDescription
+                let destination = "Destination: \n File: \(#file) - Func: \(#function) - Line: \(#line)\n"
+                LoggerManager.shared.log(
+                    subsystem: .data,
+                    level: .error,
+                    destination: destination,
+                    message: message
+                )
+            }
+        } receiveValue: { [weak self] weather in
+            self?.weatherModel = self?.transformWeatherToWeatherModel(weather)
+            self?.saveWeather(weather)
+        }
+        .store(in: &cancellables)
+    }
+    
     func requestAuthorization() {
         locationManager.requestAuthorization()
     }

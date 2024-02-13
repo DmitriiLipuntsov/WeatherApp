@@ -13,10 +13,20 @@ struct HomeView: View {
     var body: some View {
         VStack {
             if let weather = viewModel.currentWeather {
-                VStack(spacing: 30) {
+                VStack(spacing: 20) {
+                    TextField("Enter city name", text: $viewModel.cityNameInput)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal, 80)
+                    
+                    Button("Change City") {
+                        viewModel.fetchWeather()
+                    }
+                    .padding(.horizontal)
+                    
                     Text("City: \(weather.cityName)")
                         .foregroundStyle(.indigo)
                         .fontWeight(.bold)
+                        .padding(.top, 30)
                     
                     Text("Temperature: \(weather.temperature)°C")
                         .fontWeight(.semibold)

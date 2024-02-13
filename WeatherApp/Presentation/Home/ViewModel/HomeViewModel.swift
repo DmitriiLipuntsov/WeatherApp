@@ -12,6 +12,7 @@ class HomeViewModel: NSObject, ObservableObject {
     
     @Published var currentWeather: WeatherModel?
     @Published var locationAccessDenied = false
+    @Published var cityNameInput = ""
     
     private let repository = WeatherRepository()
     
@@ -24,6 +25,10 @@ class HomeViewModel: NSObject, ObservableObject {
     
     func requestAuthorization() {
         repository.requestAuthorization()
+    }
+    
+    func fetchWeather() {
+        repository.fetchCityWeather(cityName: cityNameInput)
     }
 }
 

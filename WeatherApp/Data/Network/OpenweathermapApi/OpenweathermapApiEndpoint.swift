@@ -46,6 +46,7 @@ extension OpenweathermapApiEndpoint {
     enum Path {
         case currentWeather(lat: Double, lon: Double)
         case forecastWeather(lat: Double, lon: Double)
+        case cityWeather(cityName: String)
         
         var rawValue: String {
             switch self {
@@ -53,6 +54,8 @@ extension OpenweathermapApiEndpoint {
                 return "/data/2.5/weather?lat=\(lat)&lon=\(lon)&units=metric" + key
             case .forecastWeather(let lat, let lon):
                 return "/data/2.5/forecast?lat=\(lat)&lon=\(lon)&units=metric" + key
+            case .cityWeather(let cityName):
+                return "/data/2.5/weather?q=\(cityName)&units=metric" + key
             }
         }
         

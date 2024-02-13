@@ -58,4 +58,21 @@ class OpenweathermapApiManager {
             headers: [:],
             body: nil)
     }
+    
+    func fetchCityWeather(cityName: String) -> AnyPublisher<CurrentWeather, Error> {
+        let path = OpenweathermapApiEndpoint.Path.cityWeather(cityName: cityName)
+        guard
+            let url = OpenweathermapApiEndpoint(path: path).url
+        else {
+            let error = NetworkError.invalidUrl
+            return Fail(error: error).eraseToAnyPublisher()
+        }
+        
+        return networkManager.request(
+            type: CurrentWeather.self,
+            url: url,
+            method: .get,
+            headers: [:],
+            body: nil)
+    }
 }
