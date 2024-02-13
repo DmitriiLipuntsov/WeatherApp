@@ -13,6 +13,7 @@ WeatherApp is a mobile application that provides weather forecasts for different
   - Main: Display current weather information for the user's location, including temperature, city name, and a brief weather condition description.
   - Forecast: Display a weather forecast for the selected location for the next few days.
 - Implement a central button in the tab bar with an enlarged size.
+- Allow users to check the weather for a specific city by entering its name.
 - Handle location access permission requests and display appropriate messages to the user.
 - Offline mode: Cache weather data for offline viewing.
 
@@ -31,3 +32,5 @@ WeatherApp is a mobile application that provides weather forecasts for different
 Development Time: Approximately 10 hours.
 Design: The project focused more on functionality rather than design aesthetics. Further improvements in design and layout adaptation for different screen sizes are needed.
 Data Management: More detailed work is required on data storage, testing, performance optimization, and memory leaks.
+Architecture: Utilized MVVM architecture along with a reactive repository approach.
+Abstraction: Due to the nature of the project being a test project with no planned future expansions, abstraction and code modularity were not given extensive attention.
