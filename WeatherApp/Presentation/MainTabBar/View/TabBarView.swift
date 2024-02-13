@@ -36,6 +36,7 @@ struct TabBarView: View {
                 }
             }
         }
+        .accentColor(Color.blue)
         .overlay(
             Button(action: {
                 selectedTab = .home

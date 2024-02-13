@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         VStack {
             if let weather = viewModel.currentWeather {
-                VStack(spacing: 20) {
+                VStack(spacing: HomeConsts.spacing) {
                     TextField("Enter city name", text: $viewModel.cityNameInput)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal, 80)
@@ -25,13 +25,14 @@ struct HomeView: View {
                     
                     Text("City: \(weather.cityName)")
                         .foregroundStyle(.indigo)
-                        .fontWeight(.bold)
+                        .font(.custom("Arial", size: HomeConsts.cityFontSize))
                         .padding(.top, 30)
                     
                     Text("Temperature: \(weather.temperature)°C")
-                        .fontWeight(.semibold)
+                        .font(.custom("Arial", size: HomeConsts.tempFontSize))
                     
                     Text("Comment: \(weather.comment)")
+                        .font(.custom("Arial", size: HomeConsts.tempFontSize))
                         .padding(.horizontal, 50)
                     
                     NetworkImageView(imageUrlString: weather.icon) {
@@ -39,9 +40,8 @@ struct HomeView: View {
                             
                     } progressBlock: {
                        ProgressView()
-                        
                     }
-                    .frame(width: 100 , height: 100)
+                    .frame(width: HomeConsts.iconSize , height: HomeConsts.iconSize)
                     
                 }
             } else if viewModel.locationAccessDenied {

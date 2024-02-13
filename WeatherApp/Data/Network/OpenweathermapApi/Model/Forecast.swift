@@ -14,9 +14,25 @@ struct Forecast: Codable {
 
 extension Forecast {
     struct Weather: Codable {
-        let dt: String?
+        var dt: String?
         let main: Parameters?
         let weather: [Icon]?
+        
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            dt = try container.decode(String.self, forKey: .dt)
+            main = try container.decode(Parameters.self, forKey: .main)
+            weather = try container.decode([Icon].self, forKey: .weather)
+            
+            if let originalDateString = dt {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                if let date = dateFormatter.date(from: originalDateString) {
+                    dateFormatter.dateFormat = "MM.dd  HH:mm"
+                    dt = dateFormatter.string(from: date)
+                }
+            }
+        }
         
         enum CodingKeys : String, CodingKey {
             case dt = "dt_txt"

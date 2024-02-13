@@ -24,13 +24,24 @@ enum TabItem: CaseIterable {
     }
     
     var imageName: String {
-        switch self {
-        case .forecast:
-            return "list.clipboard"
-        case .home:
-            return "house"
-        case .empty:
-            return "questionmark.circle"
-        }
+        if #available(iOS 16.0, *) {
+              switch self {
+              case .forecast:
+                  return "list.clipboard"
+              case .home:
+                  return "house"
+              case .empty:
+                  return "questionmark.circle"
+              }
+          } else {
+              switch self {
+              case .forecast:
+                  return "square.and.pencil"
+              case .home:
+                  return "house"
+              case .empty:
+                  return "questionmark.circle"
+              }
+          }
     }
 }

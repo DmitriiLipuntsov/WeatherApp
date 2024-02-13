@@ -18,22 +18,25 @@ struct CellForecastView: View {
                 } progressBlock: {
                     ProgressView()
                 }
-                .frame(width: 100 , height: 100)
+                .frame(
+                    width: ForecastConsts.iconSize,
+                    height: ForecastConsts.iconSize
+                )
                 
                 VStack {
                     Text(model.cityName)
+                        .font(.custom("Arial", size: HomeConsts.cityFontSize))
                     Text(model.dt)
+                        .font(.custom("Arial", size: HomeConsts.tempFontSize))
                 }
                 
                 Spacer()
                 
                 Text(String(model.temp))
-                    .padding(40)
-                    .scaleEffect(2.5)
+                    .padding(ForecastConsts.tempPadding)
                     .foregroundColor(Color.blue)
             }
         }
-        .padding(.horizontal , -15)
         .contentShape(Rectangle())
     }
     
