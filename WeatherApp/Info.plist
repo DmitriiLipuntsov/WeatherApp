@@ -15,7 +15,5 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSLocationDefaultAccuracyReduced</key>
-	<true/>
 </dict>
 </plist>

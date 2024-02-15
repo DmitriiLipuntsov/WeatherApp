@@ -636,8 +636,6 @@
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To determine your current location with an upper limit.";
-				INFOPLIST_KEY_NSLocationUsageDescription = "To determine your current location with an upper limit.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To determine your current location with an upper limit.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -675,8 +673,6 @@
 				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "To determine your current location with an upper limit.";
-				INFOPLIST_KEY_NSLocationUsageDescription = "To determine your current location with an upper limit.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To determine your current location with an upper limit.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
