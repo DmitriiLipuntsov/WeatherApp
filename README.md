@@ -35,3 +35,4 @@ WeatherApp is a mobile application that provides weather forecasts for different
 - Data Management: More detailed work is required on data storage, testing, performance optimization, and memory leaks.
 - Routing: Further work is needed on handling routing and dependency injection.
 - Abstraction: Due to the nature of the project being a test project with no planned future expansions, abstraction and code modularity were not given extensive attention.
+- Location Permission Issue: Encountered a problem with obtaining location permission, which required requesting access for notifications due to the absence of settings appearance for the application.
